@@ -1,0 +1,22 @@
+{% extends 'gestion_autos/base.html' %}
+
+{% block title %}Buscar Modelos{% endblock %}
+
+{% block content %}
+  <h2>Buscar Modelos</h2>
+  <form method="get">
+    <div class="form-group">
+      <input type="text" name="q" class="form-control" placeholder="Buscar por modelo o marca">
+    </div>
+    <button type="submit" class="btn btn-primary">Buscar</button>
+  </form>
+
+  {% if resultados %}
+    <h3>Resultados de la búsqueda</h3>
+    <ul>
+      {% for modelo in resultados %}
+        <li>{{ modelo.marca.nombre }} - {{ modelo.nombre }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+{% endblock %}

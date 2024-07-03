@@ -1,0 +1,12 @@
+{% extends 'gestion_autos/base.html' %}
+
+{% block title %}Agregar Modelo{% endblock %}
+
+{% block content %}
+  <h2>Agregar Modelo</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">Agregar Modelo</button>
+  </form>
+{% endblock %}

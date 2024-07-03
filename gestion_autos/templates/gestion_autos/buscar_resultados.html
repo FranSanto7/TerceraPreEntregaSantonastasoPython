@@ -1,0 +1,12 @@
+{% extends 'gestion_autos/base.html' %}
+
+{% block title %}Resultados de Búsqueda{% endblock %}
+
+{% block content %}
+  <h2>Resultados de la Búsqueda</h2>
+  <ul>
+    {% for modelo in resultados %}
+      <li>{{ modelo.marca.nombre }} - {{ modelo.nombre }}</li>
+    {% endfor %}
+  </ul>
+{% endblock %}
